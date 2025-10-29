@@ -8,7 +8,7 @@ This hook can be used to avoid manual synchronization of mypy hook additional_de
 
 ```yaml
 repos:
-  - repo: https://github.com/you/precommit-validate-mypy-deps
+  - repo: https://github.com/GenessyX/validate-mypy-deps
     rev: v0.1.0
     hooks:
       - id: validate-mypy-deps
@@ -28,7 +28,7 @@ repos:
         args: ["--format", "requirements-txt", "--no-hashes", "--frozen", "--output-file", "requirements.txt"]
         always_run: true
 
-  - repo: https://github.com/you/precommit-validate-mypy-deps
+  - repo: https://github.com/GenessyX/validate-mypy-deps
     rev: v0.1.0
     hooks:
       - id: validate-mypy-deps
