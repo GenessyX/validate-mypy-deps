@@ -9,7 +9,7 @@ This hook can be used to avoid manual synchronization of mypy hook additional_de
 ```yaml
 repos:
   - repo: https://github.com/GenessyX/validate-mypy-deps
-    rev: v0.1.0
+    rev: v0.1.1
     hooks:
       - id: validate-mypy-deps
         always_run: true
@@ -29,7 +29,7 @@ repos:
         always_run: true
 
   - repo: https://github.com/GenessyX/validate-mypy-deps
-    rev: v0.1.0
+    rev: v0.1.1
     hooks:
       - id: validate-mypy-deps
         always_run: true
