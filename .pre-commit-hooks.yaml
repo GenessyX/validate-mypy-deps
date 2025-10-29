@@ -1,0 +1,7 @@
+- id: validate-mypy-deps
+  name: Validate mypy dependencies against lockfile
+  description: Syncs mypy hook's additional_dependencies with requirements.txt
+  entry: validate-mypy-deps
+  language: python
+  pass_filenames: true
+  require_serial: true
