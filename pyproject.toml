@@ -32,6 +32,4 @@ python_version = "3.12"
 typeCheckingMode = "standard"
 
 [dependency-groups]
-lint = [
-    "pre-commit>=4.3.0",
-]
+lint = ["pre-commit>=4.3.0"]

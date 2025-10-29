@@ -51,7 +51,9 @@ repos:
     hooks:
       - id: mypy
         args: [--strict]
-        additional_dependencies: []
+        additional_dependencies:
+          - ruamel-yaml==0.18.16
+          - ruamel-yaml-clib==0.2.14 ; python_full_version < '3.14' and platform_python_implementation == 'CPython'
 
   - repo: https://github.com/alessandrojcm/commitlint-pre-commit-hook
     rev: v9.20.0
