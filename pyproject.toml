@@ -1,6 +1,6 @@
 [project]
 name = "validate-mypy-deps"
-version = "0.1.0"
+version = "0.2.0"
 description = "Validate mypy pre-commit hook additional dependencies."
 readme = "README.md"
 authors = [{ name = "gleb.kharitonov", email = "haritonovgleb123@gmail.com" }]
