@@ -1,9 +1,22 @@
 from __future__ import annotations
 
+import argparse
 import sys
 from pathlib import Path
 
 from ruamel.yaml import YAML
+
+
+def _parse_args(argv: list[str] | None = None) -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Sync mypy hook dependencies with a requirements file")
+    parser.add_argument(
+        "-r",
+        "--requirements-path",
+        default="requirements.txt",
+        help="Path to requirements file (relative to repo root or absolute)",
+    )
+    parser.add_argument("filenames", nargs="*", help=argparse.SUPPRESS)
+    return parser.parse_args(argv)
 
 
 def _read_lines(path: Path) -> list[str]:
@@ -48,8 +61,10 @@ def _set_mypy_deps(cfg_path: Path, deps: list[str]) -> bool:
 
 
 def main() -> int:
+    args = _parse_args()
     root = Path.cwd()  # pre-commit runs from the repo root
-    req = _clean(_read_lines(root / "requirements.txt"))
+    requirements_path = Path(args.requirements_path)
+    req = _clean(_read_lines(requirements_path if requirements_path.is_absolute() else root / requirements_path))
     cfg_path = root / ".pre-commit-config.yaml"
     mypy_deps = _get_mypy_deps(cfg_path)
 

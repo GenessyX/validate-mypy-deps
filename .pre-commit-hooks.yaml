@@ -1,6 +1,6 @@
 - id: validate-mypy-deps
   name: Validate mypy dependencies against lockfile
-  description: Syncs mypy hook's additional_dependencies with requirements.txt
+  description: Syncs mypy hook's additional_dependencies with a requirements file (defaults to requirements.txt)
   entry: validate-mypy-deps
   language: python
   pass_filenames: true

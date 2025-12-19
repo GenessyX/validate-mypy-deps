@@ -2,7 +2,7 @@
 
 ## Description
 
-This hook can be used to avoid manual synchronization of mypy hook additional_dependencies. This hook works by reading `requirements.txt` in the repository root.
+This hook can be used to avoid manual synchronization of mypy hook additional_dependencies. By default it reads `requirements.txt` in the repository root, but you can point it to any requirements file with `--requirements-path`.
 
 ### Hook set up:
 
@@ -13,6 +13,8 @@ repos:
     hooks:
       - id: validate-mypy-deps
         always_run: true
+        # Example: override requirements location
+        # args: ["--requirements-path", "requirements/dev.txt"]
 ```
 
 ### UV set up:
